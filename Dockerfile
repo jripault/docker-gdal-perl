@@ -62,7 +62,6 @@ RUN export POSTGRES_HOME=/usr/share/postgresql/9.4/ && \
         cpan -i DBD::Pg && \
         service postgresql stop
 
-COPY MyConfig.pm /root/.cpan/CPAN/MyConfig.pm
 RUN     perl -MCPAN -e "CPAN::Shell->notest('install', 'Class::Data::Inheritable')" && \
         perl -MCPAN -e "CPAN::Shell->notest('install', 'Test::Harness')" && \
         perl -MCPAN -e "CPAN::Shell->notest('install', 'Clone')" && \
